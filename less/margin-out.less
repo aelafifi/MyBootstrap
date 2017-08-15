@@ -1,0 +1,19 @@
+//
+// Margin (out)
+// --------------------------------------------------
+
+.set-margin-out(@start, @end, @step: @start) when( @start <= @end ) {
+	.mo@{start}, .mov@{start}, .mot@{start} { margin-top:    @start * -1px; }
+	.mo@{start}, .mov@{start}, .mob@{start} { margin-bottom: @start * -1px; }
+	.mo@{start}, .moh@{start}, .mol@{start} { margin-left:   @start * -1px; }
+	.mo@{start}, .moh@{start}, .mor@{start} { margin-right:  @start * -1px; }
+	.set-margin-out(@start + @step, @end, @step);
+}
+
+// mo:  margin-out (All)
+// mot: margin-out Top
+// mob: margin-out Bottom
+// mol: margin-out Left
+// mor: margin-out Right
+// moh: margin-out Horivontal
+// mov: margin-out Vertical

@@ -1,0 +1,19 @@
+//
+// Padding
+// --------------------------------------------------
+
+.set-padding(@start, @end, @step: @start) when( @start <= @end ) {
+	.p@{start}, .pv@{start}, .pt@{start} { padding-top:    @start * 1px; }
+	.p@{start}, .pv@{start}, .pb@{start} { padding-bottom: @start * 1px; }
+	.p@{start}, .ph@{start}, .pl@{start} { padding-left:   @start * 1px; }
+	.p@{start}, .ph@{start}, .pr@{start} { padding-right:  @start * 1px; }
+	.set-padding(@start + @step, @end, @step);
+}
+
+// p:  padding (All)
+// pt: padding Top
+// pb: padding Bottom
+// pl: padding Left
+// pr: padding Right
+// ph: padding Horivontal
+// pv: padding Vertical

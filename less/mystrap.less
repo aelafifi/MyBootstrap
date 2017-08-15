@@ -1,0 +1,62 @@
+//
+// Utils
+// --------------------------------------------------
+
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
+
+.cover { object-fit: cover; }
+.contain { object-fit: contain; }
+
+.valign-top    { vertical-align: top;    }
+.valign-bottom { vertical-align: bottom; }
+.valign-middle { vertical-align: middle; }
+
+//
+// Aspect Ratio
+// --------------------------------------------------
+
+@import 'ratio.less';
+
+// 5, 10, 15, ... 190, 195, 200
+.aspect_ratio_loop_over_100(5; 200; 5);
+
+.set-ratio(16; 9); // 16:9
+.set-ratio( 3; 2); // 3:2
+
+//
+// Padding
+// --------------------------------------------------
+
+@import 'padding.less';
+
+// 0, 5, 10, 15, ... 110, 115, 120
+.set-padding(0, 120, 5) !important;
+
+//
+// Margin
+// --------------------------------------------------
+
+@import 'margin.less';
+
+// 0, 5, 10, 15, ... 110, 115, 120
+.set-margin(0, 120, 5) !important;
+
+//
+// Margin (out)
+// --------------------------------------------------
+
+@import 'margin-out.less';
+
+// 0, -5, -10, -15, ... -110, -115, -120
+.set-margin-out(0, 120, 5) !important;
+
+//
+// Dimensions
+// --------------------------------------------------
+
+@import 'dimensions.less';
+
+// 0, 5, 10, 15, ... 190, 195, 200
+.set-dimensions(0, 200, 5) !important;
+

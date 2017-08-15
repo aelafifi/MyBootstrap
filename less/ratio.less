@@ -1,0 +1,38 @@
+//
+// Aspect Ratio
+// --------------------------------------------------
+
+.aspect-ratio {
+	position: relative;
+	&:after {
+		content: " ";
+		display: block;
+	}
+	> * {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+}
+
+.set-ratio(@x; @y; @class-name) {
+	@selector: ~".@{class-name}";
+	@{selector} {
+		&:extend(.aspect-ratio all);
+		&:after {
+			padding-top: @y * 100% / @x;
+		}
+	}
+}
+
+.set-ratio(@x; @y) {
+	.set-ratio(@x; @y; "ratio-@{x}-@{y}");
+}
+
+.aspect_ratio_loop_over_100(@start; @end; @step: @start) when( @start <= @end ) {
+	.set-ratio(@start, 100, "ratio-@{start}");
+	.aspect_ratio_loop_over_100(@start + @step; @end; @step);
+}

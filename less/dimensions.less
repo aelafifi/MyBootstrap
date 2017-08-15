@@ -1,0 +1,26 @@
+//
+// Dimensions
+// --------------------------------------------------
+
+.set-dimensions(@start, @end, @step: @start) when( @start <= @end ) {
+	.sqr@{start},
+	.w@{start} {
+		width:  @start * 1px;
+	}
+	.sqr@{start},
+	.h@{start} {
+		height: @start * 1px;
+	}
+	.wp@{start} {
+		width: @start * 1%;
+	}
+	.hp@{start} {
+		height: @start * 1%;
+	}
+	.set-dimensions(@start + @step, @end, @step);
+}
+
+// w: width
+// h: height
+// wp: width in percentage
+// hp: height in percentage

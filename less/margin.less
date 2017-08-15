@@ -1,0 +1,19 @@
+//
+// Margin
+// --------------------------------------------------
+
+.set-margin(@start, @end, @step: @start) when( @start <= @end ) {
+	.m@{start}, .mv@{start}, .mt@{start} { margin-top:    @start * 1px; }
+	.m@{start}, .mv@{start}, .mb@{start} { margin-bottom: @start * 1px; }
+	.m@{start}, .mh@{start}, .ml@{start} { margin-left:   @start * 1px; }
+	.m@{start}, .mh@{start}, .mr@{start} { margin-right:  @start * 1px; }
+	.set-margin(@start + @step, @end, @step);
+}
+
+// m:  margin (All)
+// mt: margin Top
+// mb: margin Bottom
+// ml: margin Left
+// mr: margin Right
+// mh: margin Horivontal
+// mv: margin Vertical
