@@ -123,7 +123,7 @@ X = {0, 5, 10, ... 200}
 And so on...
 ```
 
-## License and Acknowledgements
+## License
 
 Copyright 2017 Ahmed S. El-Afifi <ahmed.s.elafifi@gmail.com>
 
